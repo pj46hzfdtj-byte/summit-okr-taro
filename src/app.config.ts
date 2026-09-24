@@ -1,0 +1,57 @@
+export default defineAppConfig({
+  pages: [
+    'pages/auth/login',
+    'pages/auth/register',
+    'pages/summary/summary',
+    'pages/goals/goals',
+    'pages/tasks/tasks',
+    'pages/profile/profile',
+    'pages/goals/objective-detail',
+    'pages/focus/focus',
+    'pages/reviews/reviews',
+    'pages/visions/visions',
+    'pages/gantt/gantt',
+    'pages/ai/ai-assistant',
+    'pages/recycle/recycle',
+    'pages/help/help',
+  ],
+  window: {
+    backgroundTextStyle: 'light',
+    navigationBarBackgroundColor: '#ffffff',
+    navigationBarTitleText: 'Summit OKR',
+    navigationBarTextStyle: 'black',
+    backgroundColor: '#f5f6f7',
+  },
+  tabBar: {
+    color: '#8a8a8a',
+    selectedColor: '#409eff',
+    backgroundColor: '#ffffff',
+    borderStyle: 'black',
+    list: [
+      {
+        pagePath: 'pages/summary/summary',
+        text: '摘要',
+        iconPath: 'static/tabbar/summary.png',
+        selectedIconPath: 'static/tabbar/summary-active.png',
+      },
+      {
+        pagePath: 'pages/goals/goals',
+        text: '目标库',
+        iconPath: 'static/tabbar/goals.png',
+        selectedIconPath: 'static/tabbar/goals-active.png',
+      },
+      {
+        pagePath: 'pages/tasks/tasks',
+        text: '任务',
+        iconPath: 'static/tabbar/tasks.png',
+        selectedIconPath: 'static/tabbar/tasks-active.png',
+      },
+      {
+        pagePath: 'pages/profile/profile',
+        text: '我的',
+        iconPath: 'static/tabbar/profile.png',
+        selectedIconPath: 'static/tabbar/profile-active.png',
+      },
+    ],
+  },
+});

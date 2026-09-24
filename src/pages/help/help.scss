@@ -1,0 +1,298 @@
+/* ============ 页面骨架 ============ */
+.summit-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: calc(48px + env(safe-area-inset-bottom));
+}
+
+.help-container {
+  padding-top: 24px;
+}
+
+.help-header {
+  padding: 0 24px 24px;
+
+  &__title {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: 8px;
+    font-size: 25px;
+    color: var(--text-secondary);
+  }
+}
+
+.help-card-title {
+  display: block;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+/* ============ 关于 ============ */
+.help-about-intro {
+  display: block;
+  font-size: 26px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.help-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.help-stat {
+  flex: 1;
+  text-align: center;
+
+  &__num {
+    display: block;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+
+  &__label {
+    display: block;
+    margin-top: 6px;
+    font-size: 23px;
+    color: var(--text-secondary);
+  }
+}
+
+.help-flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  &__group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__step {
+    padding: 8px 24px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__arrow {
+    color: var(--text-secondary);
+    font-size: 28px;
+  }
+}
+
+/* ============ 快速上手 ============ */
+.help-qs-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.help-qs-num {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 24px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.help-qs-text {
+  flex: 1;
+  font-size: 26px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ============ 功能总览 ============ */
+.help-feature-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.help-feature-name {
+  display: block;
+  font-size: 27px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.help-feature-desc {
+  display: block;
+  font-size: 24px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============ FAQ 手风琴 ============ */
+.help-faq-item {
+  border-bottom: 1px solid var(--border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.help-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0;
+
+  &__text {
+    flex: 1;
+    font-size: 27px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  &__arrow {
+    font-size: 28px;
+    color: var(--text-tertiary);
+    transition: transform 0.2s;
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:active {
+    opacity: 0.75;
+  }
+}
+
+.help-faq-a {
+  display: block;
+  font-size: 26px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: 0 0 24px;
+}
+
+/* ============ 反馈表单 ============ */
+.help-form-item {
+  margin-bottom: 28px;
+}
+
+.help-form-label {
+  display: block;
+  font-size: 26px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.help-type-row {
+  display: flex;
+  gap: 16px;
+}
+
+.help-type-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 88px;
+  padding: 0 36px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 26px;
+  color: var(--text-secondary);
+  background: var(--card);
+
+  &--active {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-soft);
+    font-weight: 600;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.help-form-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 180px;
+  background: var(--bg);
+  border-radius: var(--radius-control);
+  padding: 16px 20px;
+  font-size: 28px;
+  color: var(--text);
+}
+
+.help-form-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--bg);
+  border-radius: var(--radius-control);
+  padding: 16px 20px;
+  font-size: 28px;
+  color: var(--text);
+}
+
+.summit-btn--disabled {
+  opacity: 0.6;
+}
+
+/* ============ 我的反馈 ============ */
+.help-fb-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.help-fb-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.help-fb-time {
+  font-size: 24px;
+}
+
+.help-fb-content {
+  display: block;
+  font-size: 27px;
+  color: var(--text);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.help-fb-contact {
+  display: block;
+  margin-top: 8px;
+  font-size: 24px;
+}

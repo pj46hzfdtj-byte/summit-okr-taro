@@ -1,0 +1,342 @@
+.summit-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: calc(48px + env(safe-area-inset-bottom));
+}
+
+.page-container {
+  padding: 20px 0 40px;
+}
+
+.text-small {
+  font-size: 24px;
+}
+
+/* ============ 顶部工具行 ============ */
+.g-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  margin-bottom: 24px;
+}
+
+.g-heading {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.seg {
+  display: flex;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 4px;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 0 24px;
+    font-size: 24px;
+    color: var(--text-secondary);
+    border-radius: 999px;
+
+    &--active {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}
+
+/* ============ 状态过滤 Tab（VisOKR 风格） ============ */
+.status-tabs {
+  display: flex;
+  gap: 12px;
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.status-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 24px;
+  color: var(--text-secondary);
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+
+  &.is-active {
+    color: #fff;
+    background: var(--primary);
+    border-color: var(--primary);
+    font-weight: 600;
+  }
+
+  .tab-count {
+    font-size: 20px;
+    opacity: 0.8;
+  }
+}
+
+/* ============ 甘特区 ============ */
+.gantt-card {
+  padding: 20px 0;
+}
+
+.gantt-wrap {
+  display: flex;
+  overflow: hidden;
+}
+
+.g-labels {
+  width: 180px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+}
+
+.g-axis-spacer {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.g-axis-cap {
+  font-size: 22px;
+  color: var(--text-tertiary);
+}
+
+.g-label-row {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px 0 20px;
+  box-sizing: border-box;
+}
+
+.g-label-text {
+  font-size: 24px;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.gantt-scroll {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.gantt-inner {
+  position: relative;
+}
+
+/* 时间轴 */
+.g-axis {
+  position: relative;
+  height: 48px;
+}
+
+.g-tick {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  box-sizing: border-box;
+
+  &--major {
+    border-left: 1px solid var(--border);
+  }
+}
+
+.g-tick-label {
+  font-size: 20px;
+  color: var(--text-tertiary);
+}
+
+/* 行 */
+.g-row {
+  position: relative;
+  height: 72px;
+}
+
+.g-bar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 36px;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.g-bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 18px;
+  opacity: 0.95;
+}
+
+.g-bar-tick {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  width: 4px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: #8e8e93;
+}
+
+.g-bar-label {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  font-size: 22px;
+  color: var(--text-secondary);
+}
+
+/* 今日线 */
+.g-today-line {
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  width: 0;
+  border-left: 3px solid var(--danger);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.g-today-label {
+  position: absolute;
+  top: -34px;
+  left: -24px;
+  font-size: 20px;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* 图例 */
+.g-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 0 20px;
+
+  .lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    color: var(--text-secondary);
+  }
+
+  .sw {
+    display: inline-block;
+    width: 28px;
+    border-radius: 9px;
+  }
+
+  .sw-track {
+    height: 12px;
+    background: var(--primary-soft);
+  }
+
+  .sw-fill {
+    height: 12px;
+    background: var(--primary);
+  }
+
+  .sw-tick {
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+    background: #8e8e93;
+  }
+
+  .sw-lag {
+    height: 12px;
+    background: var(--danger);
+  }
+}
+
+/* ============ 目标列表 ============ */
+.g-list-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.g-list-row {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.g-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+.g-list-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.g-list-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.g-list-name {
+  font-size: 27px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.g-list-meta {
+  display: block;
+  margin-top: 6px;
+}
+
+.g-pct {
+  font-size: 28px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-left: 16px;
+  color: var(--primary);
+
+  &--lag {
+    color: var(--danger);
+  }
+}

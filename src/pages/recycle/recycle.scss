@@ -1,0 +1,118 @@
+/* ============ 页面骨架 ============ */
+.summit-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: calc(48px + env(safe-area-inset-bottom));
+}
+
+.recycle-container {
+  padding-top: 24px;
+}
+
+.recycle-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 24px;
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    min-height: 88px;
+    padding: 0 32px;
+    border-radius: 999px;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    font-size: 26px;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+.recycle-hint-card {
+  padding: 20px 28px;
+}
+
+.recycle-hint-text {
+  font-size: 24px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.recycle-loading {
+  display: flex;
+  justify-content: center;
+  padding: 120px 0;
+  color: var(--text-tertiary);
+  font-size: 26px;
+}
+
+.summit-empty {
+  &__icon {
+    display: block;
+    font-size: 96px;
+    margin-bottom: 28px;
+  }
+}
+
+/* ============ 回收站条目 ============ */
+.recycle-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+    display: block;
+    word-break: break-all;
+  }
+
+  &__meta {
+    display: block;
+    margin-top: 6px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 32px;
+    margin-top: 16px;
+  }
+}
+
+.recycle-small {
+  font-size: 24px;
+}
+
+.recycle-action-btn {
+  font-size: 24px;
+  color: var(--primary);
+  padding: 6px 0;
+
+  &--danger {
+    color: var(--danger);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

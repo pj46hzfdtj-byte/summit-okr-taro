@@ -1,0 +1,58 @@
+{
+  "name": "summit-okr-taro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Summit OKR Taro 移动端（React）",
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "sass"
+  },
+  "scripts": {
+    "build:weapp": "taro build --type weapp",
+    "build:h5": "taro build --type h5",
+    "dev:weapp": "npm run build:weapp -- --watch",
+    "dev:h5": "npm run build:h5 -- --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "maintained node versions"
+  ],
+  "author": "summit-okr",
+  "dependencies": {
+    "@babel/runtime": "^7.24.0",
+    "@tarojs/components": "4.2.1",
+    "@tarojs/helper": "4.2.1",
+    "@tarojs/plugin-framework-react": "4.2.1",
+    "@tarojs/plugin-platform-h5": "4.2.1",
+    "@tarojs/plugin-platform-weapp": "4.2.1",
+    "@tarojs/react": "4.2.1",
+    "@tarojs/runtime": "4.2.1",
+    "@tarojs/shared": "4.2.1",
+    "@tarojs/taro": "4.2.1",
+    "dayjs": "^1.11.13",
+    "i18next": "^24.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.4.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/plugin-transform-class-properties": "7.25.9",
+    "@babel/preset-react": "^8.0.1",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.6.3",
+    "@tarojs/cli": "4.2.1",
+    "@tarojs/taro-loader": "4.2.1",
+    "@tarojs/webpack5-runner": "4.2.1",
+    "@types/react": "^18.3.12",
+    "@types/webpack-env": "^1.13.5",
+    "babel-preset-taro": "4.2.1",
+    "postcss": "^8.4.35",
+    "react-refresh": "^0.14.0",
+    "sass": "^1.75.0",
+    "typescript": "~5.7.3",
+    "webpack": "5.91.0"
+  }
+}

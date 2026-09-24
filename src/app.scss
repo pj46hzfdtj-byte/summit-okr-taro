@@ -1,0 +1,370 @@
+/**
+ * Summit OKR Taro 移动端全局样式（统一设计系统 · 三端对齐基准）
+ * 设计令牌：浅色/夜间外观 + 配色主题（blue/green/purple/macos）
+ * macOS 主题 = Apple Liquid Glass：半透明玻璃卡片 + Aurora 光斑壁纸 + SF Pro 字体栈
+ * 小程序端通过页面根节点 class（summit-page / summit-dark / theme-*）驱动；
+ * H5 端无 <page> 元素，令牌同时挂在 .summit-page 根节点上兜底。
+ */
+
+/* ============ 基础设计令牌（浅色） ============ */
+page,
+.summit-page {
+  --primary: #409eff;
+  --primary-soft: rgba(64, 158, 255, 0.1);
+  --success: #22c55e;
+  --success-soft: rgba(34, 197, 94, 0.12);
+  --warning: #f59e0b;
+  --warning-soft: rgba(245, 158, 11, 0.12);
+  --danger: #ef4444;
+  --danger-soft: rgba(239, 68, 68, 0.1);
+  --text: #1f2329;
+  --text-secondary: #646a73;
+  --text-tertiary: #8f959e;
+  --bg: #f5f6f7;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --card-border: var(--border);
+  --radius-card: 32px;
+  --radius-control: 24px;
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+  background: var(--bg);
+  color: var(--text);
+  font-size: 28px;
+  line-height: 1.5;
+}
+
+/* ============ 配色主题（仅覆盖主色；macOS 为完整玻璃主题见下） ============ */
+.theme-blue {
+  --primary: #1a73e8;
+  --primary-soft: rgba(26, 115, 232, 0.1);
+}
+
+.theme-green {
+  --primary: #2e7d32;
+  --primary-soft: rgba(46, 125, 50, 0.1);
+}
+
+.theme-purple {
+  --primary: #7c3aed;
+  --primary-soft: rgba(124, 58, 237, 0.1);
+}
+
+/* ============ macOS / Apple Liquid Glass 主题 ============ */
+.theme-macos {
+  /* Apple 系统色板 */
+  --primary: #007aff;
+  --primary-soft: rgba(0, 122, 255, 0.1);
+  --success: #34c759;
+  --success-soft: rgba(52, 199, 89, 0.12);
+  --warning: #ff9f0a;
+  --warning-soft: rgba(255, 159, 10, 0.12);
+  --danger: #ff3b30;
+  --danger-soft: rgba(255, 59, 48, 0.1);
+
+  /* Label 文本色 */
+  --text: rgba(0, 0, 0, 0.85);
+  --text-secondary: rgba(0, 0, 0, 0.55);
+  --text-tertiary: rgba(0, 0, 0, 0.25);
+
+  /* 半透明玻璃表面 */
+  --bg: rgba(0, 0, 0, 0.03);
+  --card: rgba(255, 255, 255, 0.78);
+  --border: rgba(0, 0, 0, 0.08);
+  --card-border: rgba(255, 255, 255, 0.6);
+  --radius-card: 40px;
+  --radius-control: 28px;
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.07);
+
+  /* SF 字体栈 */
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC',
+    sans-serif;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 页面背景：小程序端降级为淡彩 linear-gradient */
+.summit-page.theme-macos {
+  background: linear-gradient(120deg, #eef3fb 0%, #f3eef8 45%, #eef6f6 100%);
+}
+
+/* ============ 夜间外观 ============ */
+.summit-dark {
+  --text: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgba(255, 255, 255, 0.55);
+  --text-tertiary: rgba(255, 255, 255, 0.38);
+  --bg: #16181c;
+  --card: #212327;
+  --border: #33363b;
+  --card-border: var(--border);
+}
+
+/* 夜间下主题主色提亮 */
+.summit-dark.theme-blue {
+  --primary: #5e9ff5;
+  --primary-soft: rgba(94, 159, 245, 0.16);
+}
+
+.summit-dark.theme-green {
+  --primary: #66bb6a;
+  --primary-soft: rgba(102, 187, 106, 0.16);
+}
+
+.summit-dark.theme-purple {
+  --primary: #a06ef5;
+  --primary-soft: rgba(160, 110, 245, 0.16);
+}
+
+/* macOS 夜间：深色玻璃 */
+.summit-dark.theme-macos {
+  --primary: #0a84ff;
+  --primary-soft: rgba(10, 132, 255, 0.16);
+  --success: #30d158;
+  --success-soft: rgba(48, 209, 88, 0.16);
+  --warning: #ff9f0a;
+  --warning-soft: rgba(255, 159, 10, 0.16);
+  --danger: #ff453a;
+  --danger-soft: rgba(255, 69, 58, 0.16);
+
+  --text: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgba(255, 255, 255, 0.55);
+  --text-tertiary: rgba(255, 255, 255, 0.38);
+
+  --bg: rgba(255, 255, 255, 0.05);
+  --card: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.12);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.summit-page.theme-macos.summit-dark {
+  background: linear-gradient(120deg, #0b0d14 0%, #131022 50%, #0d1418 100%);
+}
+
+.summit-dark page,
+page.summit-dark {
+  background: var(--bg);
+}
+
+/* H5 端 <html>.dark 同步 page 背景 */
+html.dark {
+  background: #16181c;
+}
+
+/* ============ H5 端 macOS Aurora 光斑壁纸（小程序忽略以下 #ifdef H5 块） ============ */
+/* #ifdef H5 */
+.summit-page.theme-macos {
+  background: radial-gradient(
+      52rem 34rem at 8% -6%,
+      rgba(120, 170, 255, 0.5),
+      transparent 60%
+    ),
+    radial-gradient(
+      46rem 32rem at 92% 12%,
+      rgba(255, 190, 230, 0.42),
+      transparent 62%
+    ),
+    radial-gradient(
+      50rem 36rem at 70% 105%,
+      rgba(160, 230, 220, 0.4),
+      transparent 60%
+    ),
+    radial-gradient(
+      40rem 28rem at 22% 88%,
+      rgba(255, 220, 170, 0.35),
+      transparent 62%
+    ),
+    linear-gradient(120deg, #eef3fb 0%, #f3eef8 45%, #eef6f6 100%);
+}
+
+.summit-page.theme-macos.summit-dark {
+  background: radial-gradient(
+      52rem 34rem at 8% -6%,
+      rgba(40, 90, 180, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      46rem 32rem at 92% 12%,
+      rgba(150, 60, 130, 0.28),
+      transparent 62%
+    ),
+    radial-gradient(
+      50rem 36rem at 70% 105%,
+      rgba(40, 120, 115, 0.28),
+      transparent 60%
+    ),
+    linear-gradient(120deg, #0b0d14 0%, #131022 50%, #0d1418 100%);
+}
+
+/* 溢出回弹区域背景跟随（html 上同步有 theme-macos / dark 类） */
+html.theme-macos body {
+  background: linear-gradient(120deg, #eef3fb 0%, #f3eef8 45%, #eef6f6 100%);
+}
+
+html.theme-macos.dark body {
+  background: linear-gradient(120deg, #0b0d14 0%, #131022 50%, #0d1418 100%);
+}
+
+/* macOS 选中色 */
+.theme-macos ::selection,
+.theme-macos::selection {
+  background: rgba(0, 122, 255, 0.22);
+}
+/* #endif */
+
+/* ============ macOS 玻璃质感 ============ */
+/* backdrop-filter 仅 H5 生效，小程序自动忽略（可接受降级） */
+.theme-macos .summit-card,
+.theme-macos .summit-sheet,
+.theme-macos .sheet,
+.theme-macos .popup-sheet {
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
+
+.theme-macos .summit-btn {
+  border-radius: 28px;
+  font-weight: 600;
+}
+
+.theme-macos .summit-btn:not(.summit-btn--ghost):not(.summit-btn--danger) {
+  box-shadow: 0 4px 14px rgba(0, 122, 255, 0.35);
+}
+
+.theme-macos .summit-tag {
+  border-radius: 999px;
+}
+
+.theme-macos .summit-progress {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.summit-dark.theme-macos .summit-progress {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ============ 通用工具类 ============ */
+.summit-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  margin: 0 24px 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.summit-section-title {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.summit-muted {
+  color: var(--text-secondary);
+}
+
+.summit-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 16px;
+  border-radius: 999px;
+  font-size: 22px;
+  font-weight: 500;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.summit-tag--success {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.summit-tag--warning {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.summit-tag--danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.summit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88px;
+  border-radius: var(--radius-control);
+  font-size: 30px;
+  font-weight: 500;
+  background: var(--primary);
+  color: #fff;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  &--ghost {
+    background: var(--primary-soft);
+    color: var(--primary);
+  }
+
+  &--danger {
+    background: var(--danger-soft);
+    color: var(--danger);
+  }
+
+  &--disabled {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+.summit-progress {
+  height: 12px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+
+  &__bar {
+    height: 100%;
+    border-radius: 999px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+  }
+}
+
+.summit-empty {
+  padding: 120px 0;
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 26px;
+
+  &__icon {
+    display: block;
+    font-size: 96px;
+    margin-bottom: 28px;
+  }
+}
+
+/* 底部弹层通用：顶部大圆角 */
+.summit-sheet,
+.sheet,
+.popup-sheet {
+  border-radius: 32px 32px 0 0;
+}
+
+/* 紧凑模式 */
+.compact-mode {
+  font-size: 26px;
+}
+
+/* macOS 弹层玻璃化：加大顶部圆角 */
+.theme-macos .summit-sheet,
+.theme-macos .sheet,
+.theme-macos .popup-sheet {
+  border-radius: 40px 40px 0 0;
+}
